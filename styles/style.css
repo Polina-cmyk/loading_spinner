@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+  color: antiquewhite;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  font-weight: lighter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.spinner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  animation: text-fading 2s ease-in-out infinite;
+}
+
+.spinner-sector {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 15px solid transparent;
+  position: absolute;
+  mix-blend-mode: overlay;
+}
+
+.spinner-sector-blue {
+  border-top: 15px solid lightblue;
+  animation: rotation 4s ease-in-out infinite;
+}
+
+.spinner-sector-pink {
+  border-top: 15px solid pink;
+  animation: rotation 2s ease-in 500ms infinite;
+}
+
+.spinner-sector-peach {
+  border-top: 15px solid coral;
+  animation: rotation 3s ease 200ms infinite;
+}
+
+.spinner-sector-green {
+  border-top: 15px solid mediumaquamarine;
+  animation: rotation 2s ease-in-out 400ms infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes text-fading {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
